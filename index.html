@@ -7,164 +7,235 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
         
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         body {
             font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 20px;
             background: linear-gradient(135deg, #00b894 0%, #00cec9 100%);
             min-height: 100vh;
+            padding: 20px;
         }
         
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             background: white;
             border-radius: 24px;
-            padding: 40px;
+            padding: 30px;
             box-shadow: 0 10px 40px rgba(0,0,0,0.1);
         }
         
         .header {
             background: linear-gradient(135deg, #00b894 0%, #00cec9 100%);
             color: white;
-            padding: 30px;
+            padding: 25px;
             border-radius: 16px;
             margin-bottom: 30px;
             text-align: center;
         }
         
         h1 {
-            margin: 0;
-            font-size: 28px;
+            font-size: 26px;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
+            margin-bottom: 8px;
         }
         
         .subtitle {
-            margin: 10px 0 0 0;
-            font-size: 16px;
+            font-size: 14px;
             opacity: 0.95;
-            font-weight: 400;
         }
         
-        .intro {
-            background: #f8f9fa;
-            padding: 25px;
-            border-radius: 12px;
+        .date-banner {
+            background: #fff5e6;
+            border-left: 5px solid #fdcb6e;
+            padding: 15px 20px;
+            border-radius: 10px;
             margin-bottom: 30px;
-            border-left: 5px solid #00b894;
+            display: flex;
+            align-items: center;
+            gap: 15px;
         }
         
-        .intro p {
-            margin: 0;
-            color: #2d3436;
-            line-height: 1.6;
+        .date-banner .icon {
+            font-size: 32px;
+        }
+        
+        .date-banner strong {
+            color: #e17055;
+            font-size: 18px;
+        }
+        
+        .steps-container {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
         }
         
         .step {
-            margin-bottom: 35px;
-            background: #ffffff;
-            border: 2px solid #00b894;
-            border-radius: 16px;
+            background: white;
+            border: 3px solid #00b894;
+            border-radius: 20px;
             padding: 25px;
+            position: relative;
             transition: transform 0.2s, box-shadow 0.2s;
         }
         
         .step:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 20px rgba(0,184,148,0.15);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,184,148,0.2);
         }
         
         .step-header {
             display: flex;
             align-items: center;
+            gap: 15px;
             margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #e8f8f5;
         }
         
         .step-number {
             background: linear-gradient(135deg, #00b894 0%, #00cec9 100%);
             color: white;
-            width: 50px;
-            height: 50px;
+            width: 55px;
+            height: 55px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 24px;
+            font-size: 28px;
             font-weight: 700;
-            margin-right: 20px;
             flex-shrink: 0;
+            box-shadow: 0 4px 15px rgba(0,184,148,0.3);
         }
         
         .step-title {
             color: #00b894;
             font-size: 22px;
             font-weight: 700;
-            margin: 0;
         }
         
-        .step-content {
-            color: #2d3436;
-            line-height: 1.7;
+        .visual-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
         }
         
-        .sub-step {
-            margin: 15px 0;
-            padding-left: 25px;
-            position: relative;
-        }
-        
-        .sub-step:before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: #00b894;
-            font-weight: 700;
-            font-size: 18px;
-        }
-        
-        .important-box {
-            background: #fff5e6;
-            border-left: 5px solid #fdcb6e;
+        .visual-step {
+            background: #f8f9fa;
             padding: 20px;
-            border-radius: 8px;
-            margin: 20px 0;
+            border-radius: 12px;
+            text-align: center;
+            transition: all 0.2s;
         }
         
-        .important-box strong {
-            color: #e17055;
+        .visual-step:hover {
+            background: #e8f8f5;
+            transform: scale(1.02);
+        }
+        
+        .visual-step .emoji {
+            font-size: 48px;
+            margin-bottom: 10px;
+            display: block;
+        }
+        
+        .visual-step .label {
+            font-size: 13px;
+            color: #2d3436;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+        
+        .arrow {
+            text-align: center;
+            font-size: 32px;
+            color: #00b894;
+            margin: 10px 0;
         }
         
         .info-box {
             background: #e8f8f5;
             border-left: 5px solid #00b894;
-            padding: 20px;
-            border-radius: 8px;
-            margin: 20px 0;
+            padding: 15px 20px;
+            border-radius: 10px;
+            margin-top: 15px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .info-box .emoji {
+            font-size: 28px;
+        }
+        
+        .info-box-content {
+            flex: 1;
+        }
+        
+        .info-box strong {
+            color: #00b894;
+            display: block;
+            margin-bottom: 3px;
+        }
+        
+        .info-box p {
+            font-size: 13px;
+            color: #2d3436;
+            margin: 0;
+        }
+        
+        .warning-box {
+            background: #fff5e6;
+            border-left: 5px solid #fdcb6e;
+            padding: 15px 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .warning-box .emoji {
+            font-size: 28px;
         }
         
         .link-button {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
             background: linear-gradient(135deg, #00b894 0%, #00cec9 100%);
             color: white;
             padding: 12px 25px;
             border-radius: 25px;
             text-decoration: none;
             font-weight: 600;
-            margin: 10px 0;
-            transition: transform 0.2s, box-shadow 0.2s;
+            font-size: 14px;
+            margin-top: 15px;
+            transition: all 0.2s;
+            box-shadow: 0 4px 15px rgba(0,184,148,0.3);
         }
         
         .link-button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,184,148,0.3);
+            box-shadow: 0 6px 20px rgba(0,184,148,0.4);
+        }
+        
+        .link-button .emoji {
+            font-size: 20px;
         }
         
         .footer {
             background: #f8f9fa;
             padding: 25px;
-            border-radius: 12px;
+            border-radius: 16px;
             text-align: center;
             margin-top: 30px;
         }
@@ -177,10 +248,10 @@
             display: inline-flex;
             align-items: center;
             gap: 10px;
+            margin-top: 10px;
         }
         
-        .footer-email:before {
-            content: "✉";
+        .footer-email .emoji {
             font-size: 24px;
         }
         
@@ -190,13 +261,17 @@
             }
             
             h1 {
-                font-size: 22px;
+                font-size: 20px;
+            }
+            
+            .visual-steps {
+                grid-template-columns: 1fr;
             }
             
             .step-number {
-                width: 40px;
-                height: 40px;
-                font-size: 20px;
+                width: 45px;
+                height: 45px;
+                font-size: 22px;
             }
             
             .step-title {
@@ -208,96 +283,176 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>Guide de Connexion e-primo</h1>
-            <p class="subtitle">Se connecter avec ÉduConnect • École Maternelle des Agenêts • 2025-2026</p>
+            <h1>🔐 Connexion e-primo</h1>
+            <p class="subtitle">École Maternelle des Agenêts • 2025-2026</p>
         </div>
         
-        <div class="intro">
-            <p><strong>À partir du 5 septembre 2025</strong>, les parents et responsables légaux utilisent leur compte <strong>ÉduConnect</strong> pour se connecter à l'ENT e-primo. Avec un seul compte sécurisé, vous accédez à l'ENT e-primo ainsi qu'aux différents services de scolarité (livret scolaire, orientation…)</p>
-        </div>
-        
-        <div class="step">
-            <div class="step-header">
-                <div class="step-number">1</div>
-                <h2 class="step-title">J'active mon compte ÉduConnect</h2>
+        <div class="date-banner">
+            <span class="icon">📅</span>
+            <div>
+                <strong>À partir du 5 septembre 2025</strong>
+                <p style="margin: 0; font-size: 14px; color: #2d3436;">Connexion uniquement avec ÉduConnect</p>
             </div>
-            <div class="step-content">
-                <div class="important-box">
-                    <strong>Vous avez déjà un compte ÉduConnect ?</strong> Passez directement à l'étape 2
+        </div>
+        
+        <div class="steps-container">
+            <!-- ÉTAPE 1 -->
+            <div class="step">
+                <div class="step-header">
+                    <div class="step-number">1</div>
+                    <div class="step-title">Créer mon compte ÉduConnect</div>
                 </div>
                 
-                <p>Connectez-vous sur <a href="https://educonnect.education.gouv.fr/" class="link-button" target="_blank">educonnect.education.gouv.fr</a> et sélectionnez le profil <strong>Responsable d'élève</strong></p>
-                
-                <div class="sub-step">Cliquez sur le lien <strong>"Je n'ai pas de compte"</strong> situé en dessous du bouton Se Connecter</div>
-                
-                <div class="sub-step">Saisissez votre <strong>nom et prénom</strong></div>
-                
-                <div class="sub-step">Saisissez votre <strong>numéro de mobile</strong> que vous avez communiqué à l'école et recopiez le code de sécurité puis cliquez sur suivant</div>
-                
-                <div class="sub-step">Saisissez le <strong>code d'activation reçu par SMS</strong> (valable 30 minutes) dans le champ prévu à cet effet et cliquez sur Suivant</div>
-                
-                <div class="sub-step">Pour valider le rattachement de vos enfants, saisissez leurs <strong>dates de naissance</strong> et cliquez sur Continuer</div>
-                
-                <div class="sub-step">Choisissez votre <strong>mot de passe</strong> en respectant les règles indiquées à l'écran. Notez soigneusement ce mot de passe, il vous sera demandé à votre prochaine connexion</div>
-                
-                <div class="sub-step">Notez également votre <strong>identifiant ÉduConnect</strong> qui vient de s'afficher à l'écran (il vous sera demandé à votre prochaine connexion)</div>
-                
-                <div class="info-box">
-                    <strong>✓ Votre compte ÉduConnect est activé !</strong><br>
-                    Vous pouvez maintenant accéder à l'ENT e-primo ainsi qu'aux téléservices de l'Éducation nationale.
+                <div class="warning-box">
+                    <span class="emoji">⚠️</span>
+                    <div>
+                        <strong>Vous avez déjà un compte ?</strong>
+                        <p style="margin: 0; font-size: 13px;">Passez à l'étape 2</p>
+                    </div>
                 </div>
                 
-                <p style="margin-top: 20px;">Besoin d'aide ? Consultez l'aide en ligne : <a href="https://educonnect.education.gouv.fr/educt-aide/aide/" target="_blank">educonnect.education.gouv.fr/educt-aide/aide/</a></p>
-            </div>
-        </div>
-        
-        <div class="step">
-            <div class="step-header">
-                <div class="step-number">2</div>
-                <h2 class="step-title">Je me connecte sur l'ENT e-primo</h2>
-            </div>
-            <div class="step-content">
-                <div class="sub-step">Ouvrez <strong>www.e-primo.fr</strong> ou le site de l'école dans votre navigateur</div>
+                <a href="https://educonnect.education.gouv.fr/" target="_blank" class="link-button">
+                    <span class="emoji">🌐</span>
+                    Aller sur educonnect.education.gouv.fr
+                </a>
                 
-                <div class="sub-step">Cliquez sur le bouton <strong>"Connexion"</strong> dans le menu</div>
+                <div class="visual-steps">
+                    <div class="visual-step">
+                        <span class="emoji">👤</span>
+                        <div class="label">Profil<br><strong>Responsable d'élève</strong></div>
+                    </div>
+                    <div class="visual-step">
+                        <span class="emoji">📝</span>
+                        <div class="label">Nom + Prénom</div>
+                    </div>
+                    <div class="visual-step">
+                        <span class="emoji">📱</span>
+                        <div class="label">N° mobile<br>(donné à l'école)</div>
+                    </div>
+                </div>
                 
-                <div class="sub-step">Sélectionnez le profil <strong>Parent</strong></div>
+                <div class="arrow">↓</div>
                 
-                <div class="sub-step">Renseignez votre <strong>identifiant et mot de passe ÉduConnect</strong></div>
-                
-                <div class="sub-step">Cliquez sur <strong>Se connecter</strong></div>
+                <div class="visual-steps">
+                    <div class="visual-step">
+                        <span class="emoji">💬</span>
+                        <div class="label">Code SMS<br><small>(30 min)</small></div>
+                    </div>
+                    <div class="visual-step">
+                        <span class="emoji">🎂</span>
+                        <div class="label">Dates naissance<br>des enfants</div>
+                    </div>
+                    <div class="visual-step">
+                        <span class="emoji">🔑</span>
+                        <div class="label">Créer mot<br>de passe</div>
+                    </div>
+                </div>
                 
                 <div class="info-box">
-                    <strong>✓ Vous êtes identifié !</strong><br>
-                    Vous accédez maintenant à toutes les fonctionnalités de l'ENT e-primo.
+                    <span class="emoji">✅</span>
+                    <div class="info-box-content">
+                        <strong>Notez bien !</strong>
+                        <p>Votre identifiant + mot de passe ÉduConnect</p>
+                    </div>
                 </div>
             </div>
-        </div>
-        
-        <div class="step">
-            <div class="step-header">
-                <div class="step-number">3</div>
-                <h2 class="step-title">J'installe l'application mobile One Pocket</h2>
-            </div>
-            <div class="step-content">
-                <p>Pour accéder automatiquement à l'ENT et recevoir plus facilement les informations de l'école :</p>
+            
+            <!-- ÉTAPE 2 -->
+            <div class="step">
+                <div class="step-header">
+                    <div class="step-number">2</div>
+                    <div class="step-title">Me connecter à e-primo</div>
+                </div>
                 
-                <div class="sub-step">Installez l'application <strong>"One Pocket"</strong> depuis l'App Store ou Google Play</div>
+                <div class="visual-steps">
+                    <div class="visual-step">
+                        <span class="emoji">🌐</span>
+                        <div class="label">Ouvrir<br><strong>www.e-primo.fr</strong></div>
+                    </div>
+                    <div class="visual-step">
+                        <span class="emoji">🖱️</span>
+                        <div class="label">Cliquer<br><strong>Connexion</strong></div>
+                    </div>
+                    <div class="visual-step">
+                        <span class="emoji">👨‍👩‍👧</span>
+                        <div class="label">Choisir<br><strong>Parent</strong></div>
+                    </div>
+                </div>
                 
-                <div class="sub-step">Sélectionnez l'espace numérique <strong>e-primo</strong></div>
+                <div class="arrow">↓</div>
                 
-                <div class="sub-step">Indiquez votre <strong>identifiant et mot de passe ÉduConnect</strong></div>
+                <div class="visual-steps">
+                    <div class="visual-step">
+                        <span class="emoji">🆔</span>
+                        <div class="label">Identifiant<br>ÉduConnect</div>
+                    </div>
+                    <div class="visual-step">
+                        <span class="emoji">🔐</span>
+                        <div class="label">Mot de passe<br>ÉduConnect</div>
+                    </div>
+                    <div class="visual-step">
+                        <span class="emoji">✅</span>
+                        <div class="label">Se connecter</div>
+                    </div>
+                </div>
                 
                 <div class="info-box">
-                    <strong>✓ Vous êtes désormais connecté !</strong><br>
-                    Recevez les notifications de l'école directement sur votre téléphone.
+                    <span class="emoji">🎉</span>
+                    <div class="info-box-content">
+                        <strong>Vous êtes connecté !</strong>
+                        <p>Accédez à toutes les fonctionnalités de l'ENT</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- ÉTAPE 3 -->
+            <div class="step">
+                <div class="step-header">
+                    <div class="step-number">3</div>
+                    <div class="step-title">Installer l'appli mobile</div>
+                </div>
+                
+                <div style="text-align: center; margin: 20px 0;">
+                    <div style="font-size: 64px; margin-bottom: 10px;">📱</div>
+                    <div style="font-size: 24px; font-weight: 700; color: #00b894; margin-bottom: 15px;">One Pocket</div>
+                </div>
+                
+                <div class="visual-steps">
+                    <div class="visual-step">
+                        <span class="emoji">📲</span>
+                        <div class="label">Télécharger<br><strong>App Store / Play Store</strong></div>
+                    </div>
+                    <div class="visual-step">
+                        <span class="emoji">🎯</span>
+                        <div class="label">Sélectionner<br><strong>e-primo</strong></div>
+                    </div>
+                    <div class="visual-step">
+                        <span class="emoji">🔑</span>
+                        <div class="label">Identifiant +<br>mot de passe<br><strong>ÉduConnect</strong></div>
+                    </div>
+                </div>
+                
+                <div class="info-box">
+                    <span class="emoji">🔔</span>
+                    <div class="info-box-content">
+                        <strong>Notifications activées !</strong>
+                        <p>Recevez les infos de l'école sur votre téléphone</p>
+                    </div>
                 </div>
             </div>
         </div>
         
         <div class="footer">
-            <p style="color: #636e72; margin-bottom: 15px;">Besoin d'aide ? N'hésitez pas à nous contacter</p>
-            <a href="mailto:representantsagenets@gmail.com" class="footer-email">representantsagenets@gmail.com</a>
+            <p style="color: #636e72; margin-bottom: 15px; font-size: 14px;">Besoin d'aide ?</p>
+            <a href="mailto:representantsagenets@gmail.com" class="footer-email">
+                <span class="emoji">✉️</span>
+                representantsagenets@gmail.com
+            </a>
+            <div style="margin-top: 15px;">
+                <a href="https://educonnect.education.gouv.fr/educt-aide/aide/" target="_blank" style="color: #00b894; text-decoration: none; font-size: 13px;">
+                    📖 Aide en ligne ÉduConnect
+                </a>
+            </div>
         </div>
     </div>
 </body>
