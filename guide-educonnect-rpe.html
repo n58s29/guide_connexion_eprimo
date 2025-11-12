@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guide Connexion e-primo ÉduConnect</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #00b894 0%, #00cec9 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #00b894 0%, #00cec9 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 16px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        h1 {
+            margin: 0;
+            font-size: 28px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .subtitle {
+            margin: 10px 0 0 0;
+            font-size: 16px;
+            opacity: 0.95;
+            font-weight: 400;
+        }
+        
+        .intro {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            border-left: 5px solid #00b894;
+        }
+        
+        .intro p {
+            margin: 0;
+            color: #2d3436;
+            line-height: 1.6;
+        }
+        
+        .step {
+            margin-bottom: 35px;
+            background: #ffffff;
+            border: 2px solid #00b894;
+            border-radius: 16px;
+            padding: 25px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .step:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(0,184,148,0.15);
+        }
+        
+        .step-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .step-number {
+            background: linear-gradient(135deg, #00b894 0%, #00cec9 100%);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 700;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+        
+        .step-title {
+            color: #00b894;
+            font-size: 22px;
+            font-weight: 700;
+            margin: 0;
+        }
+        
+        .step-content {
+            color: #2d3436;
+            line-height: 1.7;
+        }
+        
+        .sub-step {
+            margin: 15px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .sub-step:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #00b894;
+            font-weight: 700;
+            font-size: 18px;
+        }
+        
+        .important-box {
+            background: #fff5e6;
+            border-left: 5px solid #fdcb6e;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .important-box strong {
+            color: #e17055;
+        }
+        
+        .info-box {
+            background: #e8f8f5;
+            border-left: 5px solid #00b894;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .link-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #00b894 0%, #00cec9 100%);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            margin: 10px 0;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .link-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,184,148,0.3);
+        }
+        
+        .footer {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        .footer-email {
+            color: #00b894;
+            font-weight: 600;
+            font-size: 18px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .footer-email:before {
+            content: "✉";
+            font-size: 24px;
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 22px;
+            }
+            
+            .step-number {
+                width: 40px;
+                height: 40px;
+                font-size: 20px;
+            }
+            
+            .step-title {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Guide de Connexion e-primo</h1>
+            <p class="subtitle">Se connecter avec ÉduConnect • École Maternelle des Agenêts • 2025-2026</p>
+        </div>
+        
+        <div class="intro">
+            <p><strong>À partir du 5 septembre 2025</strong>, les parents et responsables légaux utilisent leur compte <strong>ÉduConnect</strong> pour se connecter à l'ENT e-primo. Avec un seul compte sécurisé, vous accédez à l'ENT e-primo ainsi qu'aux différents services de scolarité (livret scolaire, orientation…)</p>
+        </div>
+        
+        <div class="step">
+            <div class="step-header">
+                <div class="step-number">1</div>
+                <h2 class="step-title">J'active mon compte ÉduConnect</h2>
+            </div>
+            <div class="step-content">
+                <div class="important-box">
+                    <strong>Vous avez déjà un compte ÉduConnect ?</strong> Passez directement à l'étape 2
+                </div>
+                
+                <p>Connectez-vous sur <a href="https://educonnect.education.gouv.fr/" class="link-button" target="_blank">educonnect.education.gouv.fr</a> et sélectionnez le profil <strong>Responsable d'élève</strong></p>
+                
+                <div class="sub-step">Cliquez sur le lien <strong>"Je n'ai pas de compte"</strong> situé en dessous du bouton Se Connecter</div>
+                
+                <div class="sub-step">Saisissez votre <strong>nom et prénom</strong></div>
+                
+                <div class="sub-step">Saisissez votre <strong>numéro de mobile</strong> que vous avez communiqué à l'école et recopiez le code de sécurité puis cliquez sur suivant</div>
+                
+                <div class="sub-step">Saisissez le <strong>code d'activation reçu par SMS</strong> (valable 30 minutes) dans le champ prévu à cet effet et cliquez sur Suivant</div>
+                
+                <div class="sub-step">Pour valider le rattachement de vos enfants, saisissez leurs <strong>dates de naissance</strong> et cliquez sur Continuer</div>
+                
+                <div class="sub-step">Choisissez votre <strong>mot de passe</strong> en respectant les règles indiquées à l'écran. Notez soigneusement ce mot de passe, il vous sera demandé à votre prochaine connexion</div>
+                
+                <div class="sub-step">Notez également votre <strong>identifiant ÉduConnect</strong> qui vient de s'afficher à l'écran (il vous sera demandé à votre prochaine connexion)</div>
+                
+                <div class="info-box">
+                    <strong>✓ Votre compte ÉduConnect est activé !</strong><br>
+                    Vous pouvez maintenant accéder à l'ENT e-primo ainsi qu'aux téléservices de l'Éducation nationale.
+                </div>
+                
+                <p style="margin-top: 20px;">Besoin d'aide ? Consultez l'aide en ligne : <a href="https://educonnect.education.gouv.fr/educt-aide/aide/" target="_blank">educonnect.education.gouv.fr/educt-aide/aide/</a></p>
+            </div>
+        </div>
+        
+        <div class="step">
+            <div class="step-header">
+                <div class="step-number">2</div>
+                <h2 class="step-title">Je me connecte sur l'ENT e-primo</h2>
+            </div>
+            <div class="step-content">
+                <div class="sub-step">Ouvrez <strong>www.e-primo.fr</strong> ou le site de l'école dans votre navigateur</div>
+                
+                <div class="sub-step">Cliquez sur le bouton <strong>"Connexion"</strong> dans le menu</div>
+                
+                <div class="sub-step">Sélectionnez le profil <strong>Parent</strong></div>
+                
+                <div class="sub-step">Renseignez votre <strong>identifiant et mot de passe ÉduConnect</strong></div>
+                
+                <div class="sub-step">Cliquez sur <strong>Se connecter</strong></div>
+                
+                <div class="info-box">
+                    <strong>✓ Vous êtes identifié !</strong><br>
+                    Vous accédez maintenant à toutes les fonctionnalités de l'ENT e-primo.
+                </div>
+            </div>
+        </div>
+        
+        <div class="step">
+            <div class="step-header">
+                <div class="step-number">3</div>
+                <h2 class="step-title">J'installe l'application mobile One Pocket</h2>
+            </div>
+            <div class="step-content">
+                <p>Pour accéder automatiquement à l'ENT et recevoir plus facilement les informations de l'école :</p>
+                
+                <div class="sub-step">Installez l'application <strong>"One Pocket"</strong> depuis l'App Store ou Google Play</div>
+                
+                <div class="sub-step">Sélectionnez l'espace numérique <strong>e-primo</strong></div>
+                
+                <div class="sub-step">Indiquez votre <strong>identifiant et mot de passe ÉduConnect</strong></div>
+                
+                <div class="info-box">
+                    <strong>✓ Vous êtes désormais connecté !</strong><br>
+                    Recevez les notifications de l'école directement sur votre téléphone.
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p style="color: #636e72; margin-bottom: 15px;">Besoin d'aide ? N'hésitez pas à nous contacter</p>
+            <a href="mailto:representantsagenets@gmail.com" class="footer-email">representantsagenets@gmail.com</a>
+        </div>
+    </div>
+</body>
+</html>
